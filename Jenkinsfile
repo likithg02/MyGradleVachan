@@ -1,15 +1,14 @@
-
 pipeline {
-    agent any 
+    agent any  
 
     tools {
-        gradle 'Gradle'
+        gradle 'Gradle' 
         jdk 'JDK'
     }
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/likithg02/MyGradleVachan.git'
+                git branch: 'master', url: 'https://github.com/likithg02/MyGradleApp.git'
             }
         }
 
@@ -24,13 +23,17 @@ pipeline {
                 sh 'gradle test' 
             }
         }
+
         
+        
+       
         stage('Run Application') {
             steps {
-              
+               
                 sh 'gradle run'
             }
         }
+
         
     }
 
@@ -42,4 +45,4 @@ pipeline {
             echo 'Build failed!'
         }
     }
-
+}
