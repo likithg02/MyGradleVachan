@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/Vachanbs/MyGradleApp01.git'
+                git branch: 'main', url: 'https://github.com/likithg02/MyGradleVachan.git'
             }
         }
 
